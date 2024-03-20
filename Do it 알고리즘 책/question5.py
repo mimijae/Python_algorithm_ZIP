@@ -16,15 +16,15 @@ answer=0
 for i in range(1,n):
     S[i]=S[i-1]+A[i]
 
-for i in S:
-    remainder = S[i] % m
-    if remainder == 0:
+for i in range(n):
+    remainder=S[i]%m
+    if remainder==0:
         answer+=1
     C[remainder]+=1
 
 for i in range(m):
-    if C[remainder]>1:
-        answer += (C[i]*(C[i]-1)//2)
+    if C[i]>1:
+        answer+=(C[i]*(C[i]-1)//2)
 
 print(answer)
 
